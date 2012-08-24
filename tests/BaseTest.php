@@ -19,6 +19,28 @@ class BaseTest extends \PHPUnit_Framework_TestCase {
 		$this->oracle = new Oracle($this->foo);
 	}
 
+	public function testNewObject() {
+		$this->foo = new Foo(array(
+			'publicProperty' => 'PHP FTW!'
+		));
+		$oracle = new Oracle($this->foo);
+		$this->assertEquals('PHP FTW!', $oracle->publicProperty);
+	}
+
+	public function testNewClass() {
+		$className = get_class(new Foo); // will expand namespace
+		$oracle = new Oracle($className);
+		$this->assertNull($oracle->publicProperty);
+	}
+
+	public function testNewClassWithArgs() {
+		$className = get_class(new Foo); // will expand namespace
+		$oracle = new Oracle($className, array(array(
+			'publicProperty' => 'PHP FTW!'
+		)));
+		$this->assertEquals('PHP FTW!', $oracle->publicProperty);
+	}
+
 	public function testPublicProperty() {
 		// Get default property
 		$this->assertEquals('foo', $this->oracle->publicProperty);
