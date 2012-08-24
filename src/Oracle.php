@@ -6,46 +6,38 @@ namespace magicOracle\src;
  * Oracle is a proxy class that can aid in unit testing by making all methods and properties accessible.
  * 
  * <code>
- * // Foo.php
  * class Foo {
- * 	public $r;
- * 	protected $m;
+ * 	public $publicProperty;
+ * 	private $privateProperty;
+ * 	protected $protectedProperty;
  * 	public function __construct() {
- * 		$this->r = 'meow';
- * 		$this->m = 'ruff';
+ * 		$this->publicProperty = 'foo';
+ * 		$this->privateProperty = 'bar';
+ * 		$this->protectedProperty = 'baz';
  * 	}
- * 	private function myPrivateMethod() {
- * 		return $this->r;
+ * 	public function publicMethod($words) {
+ * 		return $words;
  * 	}
- * 	private function speak($words) {
- * 		echo $words;
- * 		return;
+ * 	private function privateMethod() {
+ * 		return $this->publicProperty;
  * 	}
- * 	private static function scream($words) {
- * 		echo strtoupper($words);
- * 		return;
+ * 	protected function protectedMethod($words) {
+ * 		return strtoupper($words);
  * 	}
  * }
- * </code>
  * 
- * <code>
- * // test.php
- * require_once('Foo.php');
- * 
- * $bar = new Oracle('Foo');
+ * $fooBar = new Oracle('Foo');
  * 
  * // Call private method
- * echo $bar->myPrivateMethod(); // meow
- * 
- * // Call private method with params
- * $bar->speak('Hello, Tim!');  // Hello, Tim!
+ * echo $fooBar->privateMethod(); // 'foo';
  * 
  * // Echo protected variable
- * echo $bar->m; // 'ruff';
+ * echo $fooBar->protectedProperty; // 'baz';
  * 
  * // Set and echo protected variable
- * $bar->m = 'Blaine';
- * echo $bar->m; // Blaine
+ * echo $fooBar->privateProperty; //  'bar';
+ * $fooBar->privateProperty = 'Blaine';
+ * echo $fooBar->privateProperty; // Blaine
  * </code>
  */
 class Oracle {
@@ -68,8 +60,8 @@ class Oracle {
 	 * Allows you call any method on the $className class provided in the constructor.
 	 * 
 	 * <code>
-	 * $bar = new Oracle('Foo');
-	 * $bar->speak('Hello, Tim!');  // Hello, Tim!
+	 * $fooBar = new Oracle('Foo');
+	 * echo $fooBar->privateMethod(); // 'foo';
 	 * </code>
 	 * 
 	 * @link http://www.php.net/manual/en/language.oop5.overloading.php#object.call
@@ -90,8 +82,8 @@ class Oracle {
 	 * Allows you to retrieve the value of any property inside of the $className class.
 	 * 
 	 * <code>
-	 * $bar = new Oracle('Foo');
-	 * echo $bar->m; // 'ruff';
+	 * $fooBar = new Oracle('Foo');
+	 * echo $fooBar->protectedProperty; // 'baz';
 	 * </code>
 	 * 
 	 * @param string $name 
@@ -109,9 +101,10 @@ class Oracle {
 	 * Allows you to set the value of any property inside of the $className class.
 	 * 
 	 * <code>
-	 * $bar = new Oracle('Foo');
-	 * $bar->m = 'BlaineSch';
-	 * echo $bar->m; // BlaineSch
+	 * $fooBar = new Oracle('Foo');
+	 * echo $fooBar->privateProperty; //  'bar';
+	 * $fooBar->privateProperty = 'Blaine';
+	 * echo $fooBar->privateProperty; // Blaine
 	 * </code>
 	 * 
 	 * @param type $name 
