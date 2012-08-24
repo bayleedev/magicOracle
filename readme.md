@@ -5,6 +5,13 @@ A proxy class developed for unit testing that makes all methods and properties p
 ## Example 1
 ```php
 <?php
+// Library
+include('../magicOracle/src/Oracle.php');
+
+// Namespace
+use magicOracle\src\Oracle as Oracle;
+
+// Mock Class
 class Foo {
 	public $publicProperty;
 	private $privateProperty;
@@ -22,6 +29,7 @@ class Foo {
 	}
 }
 
+// new class
 $fooBar = new Oracle('Foo');
 
 // Call private method
