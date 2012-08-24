@@ -44,7 +44,8 @@ class Oracle {
 	/**
 	 * The constructor
 	 * 
-	 * @param string $className The name of the class you wish to access.
+	 * @param string|object $class The object, or the name of the object you want oracle to use.
+	 * @param array $args The optional arguments to be used in creating your class.
 	 */
 	public function __construct($class, $args = array()) {
 		if(!is_object($class)) {
@@ -58,7 +59,7 @@ class Oracle {
 	/**
 	 * Magic method __call
 	 * 
-	 * Allows you call any method on the $className class provided in the constructor.
+	 * Allows you call any method on the class provided to the constructor.
 	 * 
 	 * <code>
 	 * $fooBar = new Oracle('Foo');
@@ -80,7 +81,7 @@ class Oracle {
 	/**
 	 * Magic method __get
 	 * 
-	 * Allows you to retrieve the value of any property inside of the $className class.
+	 * Allows you to retrieve the value of any property inside of the proxied class.
 	 * 
 	 * <code>
 	 * $fooBar = new Oracle('Foo');
@@ -99,7 +100,7 @@ class Oracle {
 	/**
 	 * Magic method __set
 	 * 
-	 * Allows you to set the value of any property inside of the $className class.
+	 * Allows you to set the value of any property inside of the proxied class.
 	 * 
 	 * <code>
 	 * $fooBar = new Oracle('Foo');
