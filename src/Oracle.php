@@ -21,9 +21,6 @@ namespace magicOracle\src;
  * 	private function privateMethod() {
  * 		return $this->publicProperty;
  * 	}
- * 	protected function protectedMethod($words) {
- * 		return strtoupper($words);
- * 	}
  * }
  * 
  * $fooBar = new Oracle('Foo');
@@ -36,8 +33,8 @@ namespace magicOracle\src;
  * 
  * // Set and echo protected variable
  * echo $fooBar->privateProperty; //  'bar';
- * $fooBar->privateProperty = 'Blaine';
- * echo $fooBar->privateProperty; // Blaine
+ * $fooBar->privateProperty = 'BlaineSch';
+ * echo $fooBar->privateProperty; // BlaineSch
  * </code>
  */
 class Oracle {
