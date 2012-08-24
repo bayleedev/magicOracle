@@ -1,0 +1,23 @@
+{
+    "name": "blainesch/magicoracle",
+    "description": "A proxy class developed for unit testing that makes all methods and properties public to you.",
+    "keywords": ["proxy", "unit", "testing", "phpunit"],
+    "homepage": "https://github.com/BlaineSch/magicOracle",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Blaine Schmeisser",
+            "email": "BlaineSch@gmail.com",
+            "homepage": "http://www.BlaineSch.com/"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "magicOracle": "./"
+        }
+    }
+}
