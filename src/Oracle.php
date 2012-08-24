@@ -6,6 +6,13 @@ namespace magicOracle\src;
  * A proxy class developed for unit testing that makes all methods and properties public to you.
  * 
  * <code>
+ * // Library
+ * include('../magicOracle/src/Oracle.php');
+ * 
+ * // Namespace
+ * use magicOracle\src\Oracle as Oracle;
+ * 
+ * // Mock Class
  * class Foo {
  * 	public $publicProperty;
  * 	private $privateProperty;
@@ -23,6 +30,7 @@ namespace magicOracle\src;
  * 	}
  * }
  * 
+ * // new class
  * $fooBar = new Oracle('Foo');
  * 
  * // Call private method
@@ -43,6 +51,22 @@ class Oracle {
 
 	/**
 	 * The constructor
+	 * 
+	 * With class name
+	 * <code>
+	 * $fooBar = new Oracle('Foo');
+	 * </code>
+	 * 
+	 * With class name and args
+	 * <code>
+	 * $fooBar = new Oracle('Foo', array('arg1', 'arg2'));
+	 * </code>
+	 * 
+	 * With object
+	 * <code>
+	 * $foo = new Foo('arg1', 'arg2');
+	 * $fooBar = new Oracle($foo);
+	 * </code>
 	 * 
 	 * @param string|object $class The object, or the name of the object you want oracle to use.
 	 * @param array $args The optional arguments to be used in creating your class.
