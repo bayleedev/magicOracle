@@ -49,8 +49,12 @@ class Oracle {
 	 * 
 	 * @param string $className The name of the class you wish to access.
 	 */
-	public function __construct($className) {
-		$this->instance = new $className;
+	public function __construct($class, $args) {
+		if(!is_object($class)) {
+			$class = new ReflectionClass($class);
+			$class = $class->newInstanceArgs($args);
+		}
+		$this->instance = $class;
 		$this->reflection = new \ReflectionObject($this->instance);
 	}
 
