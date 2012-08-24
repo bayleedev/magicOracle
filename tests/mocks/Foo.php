@@ -9,7 +9,7 @@ class Foo {
 
 	public function __construct($args) {
 		foreach($args as $key => $value) {
-			$this->key = $value;
+			$this->$key = $value;
 		}
 	}
 
