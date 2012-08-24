@@ -7,7 +7,7 @@ class Foo {
 	private $privateProperty;
 	protected $protectedProperty;
 
-	public function __construct($args) {
+	public function __construct($args = array()) {
 		foreach($args as $key => $value) {
 			$this->$key = $value;
 		}
