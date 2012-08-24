@@ -3,6 +3,8 @@
 namespace magicOracle\src;
 
 /**
+ * Oracle Class
+ * 
  * A proxy class developed for unit testing that makes all methods and properties public to you.
  * 
  * <code>
@@ -44,6 +46,8 @@ namespace magicOracle\src;
  * $fooBar->privateProperty = 'BlaineSch';
  * echo $fooBar->privateProperty; // BlaineSch
  * </code>
+ * 
+ * @package magicOracle
  */
 class Oracle {
 	protected $instance;
