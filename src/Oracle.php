@@ -51,7 +51,7 @@ class Oracle {
 	 */
 	public function __construct($className) {
 		$this->instance = new $className;
-		$this->reflection = new ReflectionObject($this->instance);
+		$this->reflection = new \ReflectionObject($this->instance);
 	}
 
 	/**
@@ -70,7 +70,7 @@ class Oracle {
 	 * @return mixed
 	 */
 	public function __call($methodName, $args) {
-		$method = new ReflectionMethod($this->instance, $methodName);
+		$method = new \ReflectionMethod($this->instance, $methodName);
 		$method->setAccessible(true);
 		array_unshift($args, $this->instance); // make instance first
 		return call_user_func_array(array($method, 'invoke'), $args);
