@@ -48,7 +48,7 @@ class Oracle {
 	 */
 	public function __construct($class, $args = array()) {
 		if(!is_object($class)) {
-			$class = new ReflectionClass($class);
+			$class = new \ReflectionClass($class);
 			$class = $class->newInstanceArgs($args);
 		}
 		$this->instance = $class;

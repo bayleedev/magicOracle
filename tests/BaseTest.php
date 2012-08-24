@@ -2,8 +2,8 @@
 
 namespace magicOracle\tests;
 
-use \magicOracle\src\Oracle as Oracle;
-use \magicOracle\tests\mocks\Foo as Foo;
+use magicOracle\src\Oracle as Oracle;
+use magicOracle\tests\mocks\Foo as Foo;
 
 class BaseTest extends \PHPUnit_Framework_TestCase {
 
