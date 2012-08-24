@@ -35,3 +35,30 @@ echo $fooBar->privateProperty; //  'bar';
 $fooBar->privateProperty = 'BlaineSch';
 echo $fooBar->privateProperty; // BlaineSch
 ```
+
+## Requirements
+ * [PHP 5.3+](http://php.net/downloads.php)
+
+## Contributing
+
+### Requirements
+ * [PHP 5.3+](http://php.net/downloads.php)
+ * [PHPUnit](http://www.phpunit.de/manual/3.6/en/installation.html/)
+
+## Unit Testing
+```
+cd magicOracle
+phpunit ./
+```
+
+```
+PHPUnit 3.6.12 by Sebastian Bergmann.
+
+Configuration read from /Users/blaineschmeisser/Sites/devup/magicOracle/phpunit.xml
+
+......
+
+Time: 0 seconds, Memory: 5.00Mb
+
+OK (6 tests, 9 assertions)
+```
