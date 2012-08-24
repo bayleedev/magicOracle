@@ -2,6 +2,8 @@
 
 A proxy class developed for unit testing that makes all methods and properties public to you.
 
+[![Build Status](https://secure.travis-ci.org/BlaineSch/magicOracle.png?branch=master)](http://travis-ci.org/BlaineSch/magicOracle)
+
 ## Basic Example
 ```php
 <?php
