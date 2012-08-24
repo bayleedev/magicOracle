@@ -2,7 +2,7 @@
 
 A proxy class developed for unit testing that makes all methods and properties public to you.
 
-## Example 1
+## Basic Example
 ```php
 <?php
 // Library
@@ -42,6 +42,23 @@ echo $fooBar->protectedProperty; // 'baz';
 echo $fooBar->privateProperty; //  'bar';
 $fooBar->privateProperty = 'BlaineSch';
 echo $fooBar->privateProperty; // BlaineSch
+```
+
+## Constructing Oracle
+With class name
+```php
+$fooBar = new Oracle('Foo');
+```
+
+With class name and args
+```php
+$fooBar = new Oracle('Foo', array('arg1', 'arg2'));
+```
+
+With object
+```php
+$foo = new Foo('arg1', 'arg2');
+$fooBar = new Oracle($foo);
 ```
 
 ## Requirements
