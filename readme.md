@@ -45,7 +45,7 @@ echo $fooBar->privateProperty; // BlaineSch
  * [PHP 5.3+](http://php.net/downloads.php)
  * [PHPUnit](http://www.phpunit.de/manual/3.6/en/installation.html/)
 
-## Unit Testing
+### Unit Testing
 ```
 cd magicOracle
 phpunit ./
