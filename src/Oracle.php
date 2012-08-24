@@ -3,7 +3,7 @@
 namespace magicOracle\src;
 
 /**
- * Oracle is a proxy class that can aid in unit testing by making all methods and properties accessible.
+ * A proxy class developed for unit testing that makes all methods and properties public to you.
  * 
  * <code>
  * class Foo {
